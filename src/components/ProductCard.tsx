@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { changeInfo, formatPrice, UNIT } from "@/lib/format";
+import { changeInfo, formatPrice, UNIT, emoji } from "@/lib/format";
 import type { Product } from "@/types";
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -12,7 +12,7 @@ export default function ProductCard({ product }: { product: Product }) {
     >
       <div className="flex items-center gap-3">
         <span className="w-11 h-11 rounded-lg bg-gray-100 grid place-items-center text-2xl">
-          {product.image}
+         {emoji(product.image)}
         </span>
         <div className="min-w-0">
           <h3 className="font-semibold text-gray-900 truncate">

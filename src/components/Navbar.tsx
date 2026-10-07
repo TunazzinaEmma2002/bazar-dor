@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
-import { banglaDate } from "@/lib/format";
+import { banglaDate, emoji } from "@/lib/format";
 import type { Category } from "@/types";
 
 export default function Navbar({ categories }: { categories: Category[] }) {
@@ -120,7 +120,7 @@ export default function Navbar({ categories }: { categories: Category[] }) {
                     : "text-gray-700 hover:bg-gray-100"
                 }`}
               >
-                <span>{c.icon}</span>
+                <span>{emoji(c.icon)}</span>
                 {c.nameBn}
               </Link>
             );

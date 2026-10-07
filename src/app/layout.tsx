@@ -8,7 +8,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import PriceTicker from "@/components/PriceTicker";
 import Footer from "@/components/Footer";
-import "@fontsource/noto-color-emoji";
+
 import { getCategories, getProducts } from "@/lib/api";
 
 export const metadata: Metadata = {

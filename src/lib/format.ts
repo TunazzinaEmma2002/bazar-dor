@@ -43,3 +43,10 @@ export function banglaDate(): string {
     timeZone: "Asia/Dhaka",
   }).format(new Date());
 }
+const EMOJI_FALLBACK: Record<string, string> = {
+  "🫘": "🥜",
+  "🫙": "🛢️",
+  "🫚": "🌿",
+};
+
+export const emoji = (e: string): string => EMOJI_FALLBACK[e] ?? e;

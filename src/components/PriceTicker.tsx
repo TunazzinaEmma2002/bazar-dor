@@ -1,4 +1,4 @@
-import { formatPrice, UNIT_SHORT, changeInfo } from "@/lib/format";
+import { formatPrice, UNIT_SHORT, changeInfo, emoji } from "@/lib/format";
 import type { Product } from "@/types";
 
 export default function PriceTicker({ products }: { products: Product[] }) {
@@ -15,7 +15,7 @@ export default function PriceTicker({ products }: { products: Product[] }) {
               key={i}
               className="flex items-center gap-1.5 px-5 whitespace-nowrap"
             >
-              <span>{p.image}</span>
+              <span>{emoji(p.image)}</span>
               <span className="font-medium">{p.nameBn}</span>
               <span className="text-gray-600">
                 {formatPrice(p.today)} টাকা/{UNIT_SHORT[p.unit]}
