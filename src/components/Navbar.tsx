@@ -1,5 +1,7 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
+import logoIcon from "@/assets/logo-icon.png";
 import { usePathname, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
@@ -57,9 +59,9 @@ export default function Navbar({ categories }: { categories: Category[] }) {
                       referrerPolicy="no-referrer"
                     />
                   ) : (
-                    <span className="w-9 h-9 rounded-full bg-green-700 text-white grid place-items-center font-semibold">
-                      {user.name?.[0]?.toUpperCase()}
-                    </span>
+                   <span className="w-9 h-9 rounded-lg bg-green-700 grid place-items-center">
+  <Image src={logoIcon} alt="বাজার দর লোগো" width={18} height={18} />
+</span>
                   )}
                   <span className="hidden sm:block text-sm font-medium">
                     {user.name?.split(" ")[0]}

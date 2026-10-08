@@ -1,3 +1,5 @@
+import Image from "next/image";
+import heroImg from "@/assets/bazar-hero.png";
 import { banglaDate } from "@/lib/format";
 
 export default function Hero() {
@@ -14,8 +16,8 @@ export default function Hero() {
           আজকের বাজারের দাম এক নজরে
         </h1>
         <p className="mt-3 text-gray-600">
-          চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম। বিভিন্ন বাজারের
-          সর্বনিম্ন, সর্বোচ্চ ও গড় দাম এবং দামের ওঠানামা দেখুন এক জায়গায়।
+          চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক
+          বিস্তারিত, গড়, সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।
         </p>
         <a
           href="#সব-পণ্য"
@@ -26,12 +28,12 @@ export default function Hero() {
       </div>
 
       <div className="flex justify-center">
-        <div className="w-full max-w-xs aspect-square rounded-3xl bg-gradient-to-br from-green-100 to-green-50 grid place-items-center">
-          <div className="text-center">
-            <div className="text-8xl">🧺</div>
-            <div className="mt-2 text-4xl tracking-widest">🍅🥕🥬🧅</div>
-          </div>
-        </div>
+        <Image
+          src={heroImg}
+          alt="সবজি ও ফলের ঝুড়ি"
+          priority
+          className="w-full max-w-xs h-auto"
+        />
       </div>
     </section>
   );
