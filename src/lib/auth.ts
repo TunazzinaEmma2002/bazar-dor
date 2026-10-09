@@ -4,10 +4,11 @@ import { db } from "@/lib/mongodb";
 
 export const auth = betterAuth({
   database: mongodbAdapter(db),
-  emailAndPassword: {
-    enabled: true,
-    minPasswordLength: 8,
-  },
+ emailAndPassword: {
+  enabled: true,
+  minPasswordLength: 8,
+  autoSignIn: false,
+},
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID as string,
@@ -18,4 +19,5 @@ export const auth = betterAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     },
   },
+  
 });

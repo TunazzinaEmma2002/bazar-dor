@@ -1,4 +1,10 @@
+import dns from "node:dns";
 import { MongoClient } from "mongodb";
+
+
+if (process.env.NODE_ENV !== "production") {
+  dns.setServers(["8.8.8.8", "1.1.1.1"]);
+}
 
 const uri = process.env.MONGODB_URI;
 if (!uri) {
