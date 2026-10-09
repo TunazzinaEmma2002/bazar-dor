@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
 import SocialButtons from "@/components/SocialButtons";
+import { Suspense } from "react";
+import RedirectToast from "@/components/RedirectToast";
 
 export default function SignInPage() {
   const router = useRouter();
@@ -36,6 +38,9 @@ export default function SignInPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
+        <Suspense fallback={null}>
+  <RedirectToast />
+</Suspense>
       <div className="max-w-sm mx-auto text-center">
         <h1 className="text-2xl font-bold text-gray-900">সাইন ইন</h1>
         <p className="mt-1 text-sm text-gray-500">
