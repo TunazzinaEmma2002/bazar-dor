@@ -8,7 +8,10 @@ export default function SocialButtons() {
       provider,
       callbackURL: "/",
     });
-    if (error) toast.error("সোশ্যাল লগইন করা যায়নি, আবার চেষ্টা করুন");
+  if (error) {
+  console.error("Social login error:", error);
+  toast.error(error.message || "সোশ্যাল লগইন করা যায়নি, আবার চেষ্টা করুন");
+}
   };
 
   return (
